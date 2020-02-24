@@ -1,28 +1,22 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-    max-width: 700px;
+    width: 400px;
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 80px auto;
 
-    section {
-        display: flex;
-        align-items: center;
+    border: 5px solid black;
 
-        h1 {
-            font-size: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-left: 10px;
-        }
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
-        svg {
-            font-size: 20px;
-        }
+    svg {
+        font-size: 20px;
     }
 `;
 
