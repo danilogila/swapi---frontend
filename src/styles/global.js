@@ -12,18 +12,22 @@ export default createGlobalStyle`
         min-height: 100%;
     }
 
+    .App{
+        height: 100vh;
+    }
+
     body{
         background: #B6B4B4;
         -webkit-font-smoothing: antialiased !important;
     }
 
-    /* body, input, button{
+    body, input, button{
         color: #222;
         font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif
-    } */
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-    /* button{
+    button{
         cursor: pointer;
-    } */
+    }
 `;
