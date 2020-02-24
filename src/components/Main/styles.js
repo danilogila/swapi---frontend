@@ -1,33 +1,73 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
-const Info = styled.section`
-    max-width: 700px;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 80px auto;
-
+const Info = styled.div`
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F2EAE4;
+    
     section {
-        display: flex;
-        align-items: center;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
 
-        h1 {
-            font-size: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-left: 10px;
-        }
+        .planet-name {
 
-        svg {
-            font-size: 20px;
         }
+    }
+
+    p {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    svg {
+        font-size: 20px;
     }
 `;
 
-const SubmitButton = styled.button`
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+`;
 
+const SubmitButton = styled.button.attrs(props => ({
+    type: 'submit',
+    disabled: props.loading,
+}))`
+
+    font-family: 'Roboto';
+    padding: 15px 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    font-size: 10px;
+
+    color: #FFF;
+    background: #FF8C69;
+    border: 0;
+    margin-left: 10px;
+    border-radius: 4px;
+
+    display: block;
+    margin: 10px auto;
+
+    ${props =>
+        props.loading &&
+        css`
+            svg {
+                animation: ${rotate} 2s linear infinite;
+            }
+        `}
 `;
 
 export { Info, SubmitButton };
