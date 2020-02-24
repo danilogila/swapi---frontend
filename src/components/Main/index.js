@@ -17,13 +17,22 @@ export default class Main extends Component {
         return Math.round(Math.random() * (max - min) + min)
     }
 
+    componentDidUpdate(_, prevState) {
+        const { planet } = this.state;
+        if (prevState !== planet) {
+            localStorage.setItem('planet', JSON.stringify(planet));
+        }
+    }
+
     async componentDidMount(){
-        const planetInCache = localStorage.getItem("planets")
-        if(!planetInCache){
-            const response = await api.get(`planets/${this.generateRandomId(60, 1)}/`)
-            this.setState({ planet: response.data })
+        const planetsInCache = localStorage.getItem("planet")
+        
+        if(planetsInCache){
+            return this.setState({ planet:  JSON.parse(planetsInCache)})
         }
 
+        const response = await api.get(`planets/${this.generateRandomId(60, 1)}/`)
+        this.setState({ planet: response.data })
     }
 
     handleClick = async e => {
