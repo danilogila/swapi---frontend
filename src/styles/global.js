@@ -1,6 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-// import bgSpace from '../assets/yarn.jpg'
-// console.log(bgSpace)
+import { createGlobalStyle } from 'styled-components';
+
 export default createGlobalStyle`
     *{
         margin: 0;
