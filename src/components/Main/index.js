@@ -26,7 +26,7 @@ export default class Main extends Component {
 
     async componentDidMount(){
         const planetsInCache = localStorage.getItem("planet")
-        
+
         if(planetsInCache){
             return this.setState({ planet:  JSON.parse(planetsInCache)})
         }
@@ -42,7 +42,7 @@ export default class Main extends Component {
         let randomNumber = this.generateRandomId(60, 1)
         const response = await api.get(`planets/${randomNumber}/`)
 
-        this.setState({ 
+        this.setState({
             planet: response.data,
             loading: false
         })
@@ -50,22 +50,27 @@ export default class Main extends Component {
 
     render() {
         let { planet, loading } = this.state
- 
+
         return (
              planet && planet.films !== undefined && <Container>
                 <Info>
-                    <section>
-                        <h1 className="planet-name">{planet.name}</h1>
+                    <section className="planet-name-container">
+                        <h1>Planet {planet.name}</h1>
                     </section>
-                    <p>Population: {planet.population}</p>
-                    <p>Climate: {planet.climate}</p>
-                    <p>Terrain: {planet.terrain}</p>
-                    <p>Featured in {planet.films.length} films</p>
+
+                    <section className="planet-information-container">
+                        <p>Population: <span>{planet.population}</span></p>
+                        <p>Climate: <span>{planet.climate}</span></p>
+                        <p>Terrain: <span>{planet.terrain}</span></p>
+                        <p>Gravity: <span>{planet.gravity}</span></p>
+                        <p>Diameter: <span>{planet.diameter}</span></p>
+                        <p>Featured in {planet.films.length} films</p>
+                    </section>
 
                 </Info>
                 <SubmitButton onClick={this.handleClick} loading={loading}>
                     { loading ? (
-                        <FaSpinner color="#FFF" size={14} />
+                        <FaSpinner color="black" size={13} />
                     ) : (
                         "Next"
                     )}
