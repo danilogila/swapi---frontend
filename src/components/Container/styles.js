@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-    width: 400px;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-
-    border: 5px solid black;
-
+    width: 380px;
+    border-radius: 5px;
+    border: 5px solid #e8e400;
     margin: 0;
     position: absolute;
     top: 50%;

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-
+// import bgSpace from '../assets/yarn.jpg'
+// console.log(bgSpace)
 export default createGlobalStyle`
     *{
         margin: 0;
@@ -17,14 +18,14 @@ export default createGlobalStyle`
     }
 
     body{
-        background: #B6B4B4;
+        background-image: url("/yarn.jpg");
         -webkit-font-smoothing: antialiased !important;
     }
 
     body, input, button{
-        color: #222;
+        color: #e8e400;
         font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Roboto", sans-serif;
     }
 
     button{

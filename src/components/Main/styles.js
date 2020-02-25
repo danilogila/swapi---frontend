@@ -6,24 +6,50 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #F2EAE4;
-    
-    section {
+
+    .planet-name-container {
         width: 100%;
-        padding: 20px;
+        padding: 35px 20px 35px 20px;
         text-align: center;
 
-        .planet-name {
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 3px solid #e8e400;
+            border-radius: 3px;
+            padding: 5px;
+        }
 
+        p{
+            font-size: 2.5rem;
+        }
+
+        hr{
+            background-color: #e8e400;
+            margin-top: 15px;
         }
     }
 
-    p {
-        margin: 10px;
-    }
+    .planet-information-container{
+        width: 100%;
+        padding: 20px 10px;
 
-    h1 {
-        font-size: 20px;
+        p {
+            font-size: 0.9rem;
+            margin: 0px;
+            padding: 8px 10px;
+            font-weight: 600;
+
+            &:last-child{
+                text-align: center;
+                padding: 20px 0px 0px 0px;
+            }
+
+            span {
+                color: inherit;
+                font-weight: lighter;
+            }
+        }
+
     }
 
     svg {
@@ -41,7 +67,6 @@ const rotate = keyframes`
 `;
 
 const SubmitButton = styled.button.attrs(props => ({
-    type: 'submit',
     disabled: props.loading,
 }))`
 
@@ -52,8 +77,8 @@ const SubmitButton = styled.button.attrs(props => ({
 
     font-size: 10px;
 
-    color: #FFF;
-    background: #FF8C69;
+    color: black;
+    background: #e8e400;
     border: 0;
     margin-left: 10px;
     border-radius: 4px;
@@ -68,6 +93,10 @@ const SubmitButton = styled.button.attrs(props => ({
                 animation: ${rotate} 2s linear infinite;
             }
         `}
+
+    &:hover{
+        background-color: #fcfa72;
+    }
 `;
 
 export { Info, SubmitButton };
