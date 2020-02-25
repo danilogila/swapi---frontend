@@ -9,7 +9,7 @@ const Info = styled.div`
 
     .planet-name-container {
         width: 100%;
-        padding: 35px 20px 35px 20px;
+        padding: 35px 20px 20px 20px;
         text-align: center;
 
         h1 {
@@ -37,7 +37,7 @@ const Info = styled.div`
             font-size: 0.9rem;
             margin: 0px;
             padding: 8px 10px;
-            font-weight: 600;
+            font-weight: bolder;
 
             &:last-child{
                 text-align: center;
