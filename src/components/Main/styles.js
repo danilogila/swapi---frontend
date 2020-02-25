@@ -35,6 +35,7 @@ const Info = styled.div`
 
         p {
             font-size: 0.9rem;
+            line-height: 0.9rem;
             margin: 0px;
             padding: 8px 10px;
             font-weight: bolder;
@@ -66,10 +67,7 @@ const rotate = keyframes`
     }
 `;
 
-const SubmitButton = styled.button.attrs(props => ({
-    disabled: props.loading,
-}))`
-
+const SubmitButton = styled.button`
     font-family: 'Roboto';
     padding: 15px 50px;
     text-transform: uppercase;
